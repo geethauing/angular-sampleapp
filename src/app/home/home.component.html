@@ -1,0 +1,50 @@
+<h3>home component works!</h3>
+
+<h1>Home component view encapsulation</h1>
+<div class="col">
+    <div style="width: 300px; margin-bottom: 20px;">
+      <h3>Select a single city</h3>
+      <ng-select [allowClear]="true"
+                  [items]="items"
+                  [disabled]="disabled"
+                  (data)="refreshValue($event)"
+                  (selected)="selected($event)"
+                  (removed)="removed($event)"
+                  (typed)="typed($event)"
+                  placeholder="No city selected">
+      </ng-select>
+      <p></p>
+      <h6>{{value.text}}</h6>
+    </div>
+    <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+    <input [(ngModel)]="myProperty" (ngModelChange)="myProperty = $event" />
+    <h6 *ngIf="myProperty">{{myProperty}}</h6>
+    <p [ngStyle]="{'background': isBlue ? 'blue' : 'red'}"> I am an Attribute Directive</p>
+    <p *ngIf="show">I am a Structural Directive</p>
+    <p appAppHighlight>Test custom Directive</p>
+    <input [(ngModel)]="toggle" type="checkbox" id="showcontent" /> 
+    <label for="showcontent">Show My Content</label>
+    <hr />
+    <div *ngIf="toggle; else prompt">
+      Congratulations, you've reached the secret bonus level!
+    </div>
+    <ng-template #prompt>
+      Click the checkbox above to reveal hidden content!
+    </ng-template>
+    <div class="row"></div>
+    <button class="btn btn-primary"
+       (click)="toggleDisplay()">Toggle me</button>
+       <div *ngIf = '!isToggle'>This is a div which toggles.</div>
+    <h1>View encapsulation</h1>  
+    <div style="text-align:center">
+      <h1>
+        Welcome to {{ title }}!            
+        Welcome to {{ parenttitle }}!
+      </h1>
+    </div>  
+    <app-parent></app-parent>
+    
+    </div>
+
+  
+

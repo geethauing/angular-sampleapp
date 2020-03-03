@@ -1,0 +1,52 @@
+<p>parent works!</p>
+
+<h3>Parent Component</h3>
+
+<label>Bitcoin price</label>
+<input type="text" #pcomponent (keyup)="0" />
+
+<p>Value of child component is: </p>
+<app-child [PData]="pcomponent.value"></app-child>
+
+
+  <!-- <div *ngFor = "let data of datacheck">
+    <input type="text"  value="{{data.Capability}}" />
+  </div> -->
+
+  <form 
+  *ngIf="capabilityForm"
+  [formGroup]="capabilityForm">
+  <div formArrayName="capabilities">
+    <div *ngFor="let capability of capabilityForm.controls['capabilities'].controls; let i = index">
+      <div [formGroupName]="i">
+        <input type="text" formControlName="capability">
+        <input type="text" formControlName="subCategory">
+        <input type="text" formControlName="skill">
+        <input type="text" formControlName="skillId">
+        <button (click)="enableSection(i, capability.disabled)">{{ capability.disabled ? 'Edit': 'Save' }}</button>
+      </div>
+    </div>
+  </div>
+</form>
+<p style="padding: 10px;"></p>
+
+<p class="componentp">JSONPIPE: Converts the value to json representation using the jsonpipe</p>
+<input type="text" [(ngModel)]="myVal" />
+
+<app-ngonchange-prop-bind [myPropData]="myVal"></app-ngonchange-prop-bind>
+
+Name: <input type='text' [(ngModel)]="person.name">
+<br />
+Age: 
+<button (click)="person.age = person.age+1">+</button>
+{{ person.age }}
+<button (click)="person.age = person.age-1">-</button>
+<br />
+<button (click)="reassign()">Re-Assign</button>
+<app-docheck [person]="person"></app-docheck>
+<br />
+<pre><code>
+{{ person | json}}
+</code></pre>
+
+
