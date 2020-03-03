@@ -302,14 +302,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="'/home'">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" [routerLink]="'/about'">About</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+        <a class="nav-link dropdown-toggle" [routerLink]="'/form-module'" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Form Module
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
@@ -326,70 +326,11 @@
   </div>
 </nav>
 
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="#">Logo</a>
-
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link 1</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link 2</a>
-    </li>
-
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Dropdown link
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
-      </div>
-    </li>
-  </ul>
-</nav>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-      <div class="navbar-header">
-          <a class="navbar-brand">
-            <img src="assets/img/ngx-bootstrap.svg" class="logo">
-          </a>
-          <span class="navbar-brand">Angular + Bootstrap</span>
-      </div>
-      <ul class="nav navbar-nav">
-          <li class="active"><a href="#">
-            Link <span class="sr-only">(current)</span>
-          </a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown" dropdown> <!-- {1} -->
-              <a dropdownToggle role="button"> <!-- {2} -->
-                Dropdown <span class="caret"></span></a>
-              <ul *dropdownMenu class="dropdown-menu"> <!-- {3} -->
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
-              </ul>
-          </li>
-      </ul>
-  </div>
-</nav>
 <p>
   <ngb-alert [dismissible]="false">
     <strong>Warning!</strong> Sample alert.
   </ngb-alert>
 </p>
-<a [routerLink]="'/home'"> Home </a>
-<a [routerLink]="'/about'"> About </a>
-<a [routerLink]="'/form-module'"> Form Module </a>
 
 <div>
   <router-outlet></router-outlet>
